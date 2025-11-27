@@ -989,7 +989,7 @@ function createPassengersOnRoadsOnly() {
                     for (let j = 0; j < 3; j++) {
                     const offset = (j - 1) * 30;
                     
-                    if (size.x > size.z) {s
+                    if (size.x > size.z) {
                         validRoadPoints.push({ 
                             x: center.x + offset, 
                             z: center.z + sidewalkOffset
@@ -1950,7 +1950,7 @@ function calculateFareWithTip() {
     
     const tip = Math.round((totalBaseFare + speedBonus) * tipPercentage);
     
-    console.log(`📊 Trip Stats: Distance=${distance.toFixed(1)}, Time=${tripTime.toFixed(1)}s, Expected=${expectedTime.toFixed(1)}s, SpeedBonus=${speedBonus}, Tip%=${(tipPercentage*100).toFixed(0)}%`);
+    console.log(`Trip Stats: Distance=${distance.toFixed(1)}, Time=${tripTime.toFixed(1)}s, Expected=${expectedTime.toFixed(1)}s, SpeedBonus=${speedBonus}, Tip%=${(tipPercentage*100).toFixed(0)}%`);
     
     return {
         base: totalBaseFare,
@@ -2055,7 +2055,7 @@ function selectPassenger(passenger) {
         gameStateEl.textContent = 'PICK UP';
         gameStateEl.className = 'pickup';
     }
-    showNotification(`Pick up ${passenger.name} (${typeName}) ${tipRating} - Go to GREEN marker!`, 3000);
+     showNotification(`Pick up ${passenger.name} (${typeName}) ${tipRating} - Go to GREEN marker!`, 3000);
 }
 
 function showNotification(message, duration = 2500) {
