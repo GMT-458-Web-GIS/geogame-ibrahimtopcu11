@@ -930,9 +930,15 @@ async function loadAllModels() {
     
     try {
         const taxiGLTF = await new Promise((resolve, reject) => {
-            loader.load('assets/taxi.glb', resolve,
-                (xhr) => console.log(`Taxi: ${(xhr.loaded / xhr.total * 100).toFixed(0)}%`),
-                reject
+            loader.load(
+                'assets/taxi.glb',
+                (gltf) => resolve(gltf),
+                (xhr) => {
+                    if (xhr.total > 0) {
+                        console.log(`Taxi: ${(xhr.loaded / xhr.total * 100).toFixed(0)}%`);
+                    }
+                },
+                (error) => reject(error)
             );
         });
         
@@ -948,10 +954,10 @@ async function loadAllModels() {
         });
         
         scene.add(taxiModel);
-        console.log('✅ Taxi loaded');
+        console.log('Taxi loaded');
         
     } catch (error) {
-        console.warn('⚠️ taxi.glb not found, using fallback');
+        console.warn('taxi.glb not found, using fallback');
         createFallbackTaxi();
     }
     updateProgress('Taxi loaded');
