@@ -1,0 +1,6 @@
+scripts/data/*.parquet
+scripts/data/*.csv
+scripts/node_modules/
+.env
+.DS_Store
+*.log

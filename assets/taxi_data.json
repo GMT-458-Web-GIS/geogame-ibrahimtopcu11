@@ -1,0 +1,152 @@
+{
+  "passengers": [
+    {
+      "id": 1,
+      "name": "Ahmet Yılmaz",
+      "type": "business",
+      "urgency": "high",
+      "baseTip": 85,
+      "pickup": { "x": 30, "z": 60, "marker": "🏢" },
+      "dropoff": { "x": -120, "z": -60 }
+    },
+    {
+      "id": 2,
+      "name": "Ayşe Demir",
+      "type": "tourist",
+      "urgency": "normal",
+      "baseTip": 60,
+      "pickup": { "x": -60, "z": 30, "marker": "📸" },
+      "dropoff": { "x": 90, "z": 120 }
+    },
+    {
+      "id": 3,
+      "name": "Mehmet Kaya",
+      "type": "student",
+      "urgency": "low",
+      "baseTip": 35,
+      "pickup": { "x": 90, "z": -90, "marker": "📚" },
+      "dropoff": { "x": -30, "z": 60 }
+    },
+    {
+      "id": 4,
+      "name": "Fatma Öztürk",
+      "type": "elderly",
+      "urgency": "critical",
+      "baseTip": 100,
+      "pickup": { "x": -120, "z": 90, "marker": "🏥" },
+      "dropoff": { "x": 60, "z": -30 }
+    },
+    {
+      "id": 5,
+      "name": "Ali Şahin",
+      "type": "business",
+      "urgency": "high",
+      "baseTip": 90,
+      "pickup": { "x": 150, "z": 30, "marker": "💼" },
+      "dropoff": { "x": -90, "z": -120 }
+    },
+    {
+      "id": 6,
+      "name": "Zeynep Aksoy",
+      "type": "shopper",
+      "urgency": "normal",
+      "baseTip": 55,
+      "pickup": { "x": -30, "z": -60, "marker": "🛍️" },
+      "dropoff": { "x": 120, "z": 90 }
+    },
+    {
+      "id": 7,
+      "name": "Mustafa Çelik",
+      "type": "worker",
+      "urgency": "high",
+      "baseTip": 70,
+      "pickup": { "x": 60, "z": 150, "marker": "🔧" },
+      "dropoff": { "x": -150, "z": -30 }
+    },
+    {
+      "id": 8,
+      "name": "Elif Arslan",
+      "type": "tourist",
+      "urgency": "low",
+      "baseTip": 45,
+      "pickup": { "x": -90, "z": -150, "marker": "🎒" },
+      "dropoff": { "x": 30, "z": 90 }
+    },
+    {
+      "id": 9,
+      "name": "Hasan Polat",
+      "type": "business",
+      "urgency": "critical",
+      "baseTip": 120,
+      "pickup": { "x": 120, "z": -30, "marker": "✈️" },
+      "dropoff": { "x": -60, "z": 150 }
+    },
+    {
+      "id": 10,
+      "name": "Selin Yıldız",
+      "type": "party",
+      "urgency": "normal",
+      "baseTip": 65,
+      "pickup": { "x": -150, "z": 60, "marker": "🎉" },
+      "dropoff": { "x": 90, "z": -90 }
+    },
+    {
+      "id": 11,
+      "name": "Emre Doğan",
+      "type": "student",
+      "urgency": "low",
+      "baseTip": 30,
+      "pickup": { "x": 30, "z": -120, "marker": "🎓" },
+      "dropoff": { "x": -120, "z": 30 }
+    },
+    {
+      "id": 12,
+      "name": "Deniz Aydın",
+      "type": "family",
+      "urgency": "normal",
+      "baseTip": 75,
+      "pickup": { "x": -60, "z": -90, "marker": "👨‍👩‍👧" },
+      "dropoff": { "x": 150, "z": 60 }
+    },
+    {
+      "id": 13,
+      "name": "Burak Koç",
+      "type": "athlete",
+      "urgency": "high",
+      "baseTip": 80,
+      "pickup": { "x": 90, "z": 60, "marker": "⚽" },
+      "dropoff": { "x": -30, "z": -150 }
+    },
+    {
+      "id": 14,
+      "name": "Ceren Tan",
+      "type": "doctor",
+      "urgency": "critical",
+      "baseTip": 110,
+      "pickup": { "x": -90, "z": 120, "marker": "⚕️" },
+      "dropoff": { "x": 60, "z": -60 }
+    },
+    {
+      "id": 15,
+      "name": "Oğuz Eren",
+      "type": "musician",
+      "urgency": "normal",
+      "baseTip": 50,
+      "pickup": { "x": 150, "z": -90, "marker": "🎸" },
+      "dropoff": { "x": -150, "z": 90 }
+    }
+  ],
+  "gameSettings": {
+    "startingMoney": 250,
+    "redLightPenalty": 10,
+    "baseSpeed": 0.5,
+    "nightBonusMultiplier": 1.5,
+    "rushHourMultiplier": 1.2
+  },
+  "cityInfo": {
+    "name": "Taksi Şehri",
+    "gridSize": 400,
+    "roadWidth": 16,
+    "blockSize": 60
+  }
+}
