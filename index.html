@@ -431,6 +431,157 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+        #tutorial-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        #tutorial-screen.active {
+            display: flex;
+        }
+        .tutorial-container {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 700px;
+            width: 100%;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
+        }
+        .tutorial-container h1 {
+            color: #FFD700;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        .tutorial-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .tutorial-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 3px solid #FFD700;
+        }
+        .step-number {
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            color: #000;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 16px;
+        }
+        .step-content p {
+            color: #aaa;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .step-content kbd {
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #FFD700;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        .green-text {
+            color: #00ff00;
+            font-weight: bold;
+        }
+        .red-text {
+            color: #ff4444;
+            font-weight: bold;
+        }
+        .tutorial-controls {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .tutorial-controls h3 {
+            color: #FFD700;
+            margin: 0 0 15px 0;
+            text-align: center;
+            font-size: 18px;
+        }
+        .control-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .control-item {
+            color: #fff;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .control-item kbd {
+            background: #333;
+            padding: 4px 10px;
+            border-radius: 4px;
+            color: #FFD700;
+            font-family: monospace;
+        }
+        .tutorial-tip {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(76, 175, 80, 0.1));
+            border: 1px solid #4CAF50;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            color: #4CAF50;
+            font-size: 14px;
+        }
+        .tutorial-tip strong {
+            color: #8BC34A;
+        }
+        #start-game-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #FFD700, #FFA500);
+            border: none;
+            border-radius: 30px;
+            color: #000;
+            font-size: 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        #start-game-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 30px rgba(255, 215, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -441,6 +592,62 @@
             <div id="loading-progress"></div>
         </div>
         <p id="loading-text">Initializing...</p>
+    </div>
+
+    <div id="tutorial-screen">
+        <div class="tutorial-container">
+            <h1>HOW TO PLAY</h1>
+            <div class="tutorial-steps">
+                <div class="tutorial-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Find a Passenger</h3>
+                        <p>Press <kbd>R</kbd> to open the passenger list and select someone to pick up.</p>
+                    </div>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Go to Pickup Location</h3>
+                        <p>Drive to the <span class="green-text">GREEN</span> marker. Use the minimap to navigate.</p>
+                    </div>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Pick Up Passenger</h3>
+                        <p>Stop your taxi near the green marker to pick up the passenger.</p>
+                    </div>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Go to Drop-off Location</h3>
+                        <p>Drive to the <span class="red-text">RED</span> marker shown on your minimap.</p>
+                    </div>
+                </div>
+                <div class="tutorial-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Complete the Ride</h3>
+                        <p>Stop near the red marker to drop off and earn money + tips!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tutorial-controls">
+                <h3>Controls</h3>
+                <div class="control-grid">
+                    <div class="control-item"><kbd>W</kbd><kbd>S</kbd> Accelerate / Brake</div>
+                    <div class="control-item"><kbd>A</kbd><kbd>D</kbd> Steer Left / Right</div>
+                    <div class="control-item"><kbd>SPACE</kbd> Handbrake</div>
+                    <div class="control-item"><kbd>R</kbd> Passenger List</div>
+                </div>
+            </div>
+            <div class="tutorial-tip">
+                <strong>TIP:</strong> Drive faster for bigger tips! But don't run red lights (-$15)
+            </div>
+            <button id="start-game-btn" onclick="startGame()">START DRIVING</button>
+        </div>
     </div>
 
     <canvas id="game-canvas"></canvas>

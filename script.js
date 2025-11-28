@@ -60,6 +60,7 @@ let buildingCollisionBoxes = [];
 let groundMeshes = [];
 let roadMeshes = [];
 let isOnRoad = false;
+let tutorialShown = false;
 
 let lamps = [];
 
@@ -143,7 +144,14 @@ async function init() {
     const loadingScreen = document.getElementById('loading-screen');
     if (loadingScreen) loadingScreen.classList.add('hidden');
     
-    animate();
+    if (!tutorialShown) {
+        const tutorialScreen = document.getElementById('tutorial-screen');
+        if (tutorialScreen) {
+            tutorialScreen.classList.add('active');
+        }
+    } else {
+        animate();
+    }
 }
 
 function setupLights() {
@@ -2081,5 +2089,16 @@ function showNotification(message, duration = 2500) {
 }
 
 window.togglePassengerList = togglePassengerList;
+
+function startGame() {
+    tutorialShown = true;
+    const tutorialScreen = document.getElementById('tutorial-screen');
+    if (tutorialScreen) {
+        tutorialScreen.classList.remove('active');
+    }
+    animate();
+}
+
+window.startGame = startGame;
 
 init();
